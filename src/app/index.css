@@ -1,1 +1,13 @@
+.appear-animation{
+    animation: appear ease-in 0.5s;
 
+}
+
+@keyframe appear{
+    from:{
+        opacity:0
+    }
+    to:{
+        opacity:1
+    }
+}

@@ -15,6 +15,7 @@ import {
   AutocompleteProps,
   SxProps,
 } from "@mui/material";
+import { ChangeEvent } from "react";
 
 // Define a type mapping for MUI components
 type MUIComponentProps<T> = T extends typeof TextField
@@ -50,7 +51,7 @@ export type formType<T extends React.ComponentType<any> = any> = {
   ClassNames?: string;
   size?: number;
   sx?: SxProps;
-  onChange?: Function;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   props?: MUIComponentProps<T>; // Dynamically infer props based on the input component
   options?: string[]; // For components like Autocomplete or Select
 };
@@ -58,7 +59,7 @@ export type configFormType = {
   rtl: boolean;
   gap: { row?: number; block?: number } | number;
   form: formType[];
-  submitHandler: Function;
+  submitHandler: (values: object) => void;
   buttonConfig: {
     text?: string;
     variant?: "contained" | "outlined" | "text";

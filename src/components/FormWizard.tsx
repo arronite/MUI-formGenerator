@@ -1,10 +1,4 @@
-import {
-  EventHandlers,
-  FormControl,
-  FormLabel,
-  Grid2,
-  Typography,
-} from "@mui/material";
+import { FormControl, FormLabel, Grid2, Typography } from "@mui/material";
 import { ChangeEvent, useState } from "react";
 import { configFormType } from "../types/FormConfigType";
 import SubmitButton from "./submitButton/SubmitButton";
@@ -59,7 +53,7 @@ const FormWizard = ({ config }: { config: configFormType }) => {
       <FormControl fullWidth>
         <Grid2 {...gridGap} container width={"100%"} height={"100%"}>
           {config.form.map((row, index) => (
-            <Grid2 key={index} size={row.size}>
+            <Grid2 className="appear-animation" key={index} size={row.size}>
               <FormLabel>
                 <Typography variant="h5">{row.label}</Typography>
               </FormLabel>
